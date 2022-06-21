@@ -40,9 +40,9 @@ class AddTaskScreen extends StatelessWidget {
                   elevation: 0,
                   fillColor: Color(0xFF8A3DAE),
                   onPressed: () {
-                    print('$newTaskTitle my text here ..........:)');
                     Provider.of<TaskData>(context, listen: false)
                         .addTask(newTaskTitle);
+                    newTaskTitle = '';
                     Navigator.pop(context);
                   },
                   child: Text(

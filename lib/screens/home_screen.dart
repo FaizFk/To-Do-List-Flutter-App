@@ -5,9 +5,23 @@ import 'package:to_do_list/widgets/task_tile.dart';
 
 import 'add_task_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('Init State...............');
+    Provider.of<TaskData>(context, listen: false).getTaskList();
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('Remade HomeScreen.............');
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
